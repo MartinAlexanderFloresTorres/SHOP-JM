@@ -33,7 +33,18 @@ export default function ProductList() {
         </Link>
       </div>
 
-      <Swiper className="relative w-full" slidesPerView={4} spaceBetween={10}>
+      <Swiper
+        className="relative w-full"
+        slidesPerView={4}
+        spaceBetween={10}
+        breakpoints={{
+          0: { slidesPerView: 1, spaceBetween: 10 },
+          640: { slidesPerView: 1, spaceBetween: 10 },
+          768: { slidesPerView: 2, spaceBetween: 10 },
+          1024: { slidesPerView: 3, spaceBetween: 10 },
+          1280: { slidesPerView: 4, spaceBetween: 10 },
+        }}
+      >
         <SwiperSlide>
           <Product />
         </SwiperSlide>
