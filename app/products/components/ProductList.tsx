@@ -25,7 +25,7 @@ const Prev = () => {
 
 export default function ProductList() {
   return (
-    <div className="p-4 w-full">
+    <div className="container p-4">
       <div className="text-center p-4">
         <h2 className="uppercase text-black mb-2 text-3xl font-bold text-center">Nuevo Productos</h2>
         <Link href={'#'} className="uppercase text-gray-500 text-sm border-b-2 border-b-gray-200">
@@ -35,14 +35,14 @@ export default function ProductList() {
 
       <Swiper
         className="relative w-full"
-        slidesPerView={4}
+        slidesPerView={5}
         spaceBetween={10}
         breakpoints={{
           0: { slidesPerView: 1, spaceBetween: 10 },
-          640: { slidesPerView: 1, spaceBetween: 10 },
-          768: { slidesPerView: 2, spaceBetween: 10 },
-          1024: { slidesPerView: 3, spaceBetween: 10 },
-          1280: { slidesPerView: 4, spaceBetween: 10 },
+          460: { slidesPerView: 2, spaceBetween: 10 },
+          800: { slidesPerView: 3, spaceBetween: 10 },
+          980: { slidesPerView: 4, spaceBetween: 10 },
+          1280: { slidesPerView: 5, spaceBetween: 10 },
         }}
       >
         <SwiperSlide>
