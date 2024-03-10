@@ -17,7 +17,7 @@ export default function ShalomServices() {
     <section className="my-6">
       <div className=" pb-6">
         <h2 className="text-3xl font-semibold text-center uppercase">Conoce los envios</h2>
-        <img src="/SHALOM-AEREO.png" alt="Shalom" className="mx-auto mt-4 w-[100px]" />
+        <img src="/SHALOM-AEREO-1.png" alt="Shalom" className="mx-auto mt-4 w-[100px]" />
       </div>
       <div className="bg-[#E12326] mt-[100px] p-4 pb-40 ">
         <div className="max-w-[1400px] mx-auto">
