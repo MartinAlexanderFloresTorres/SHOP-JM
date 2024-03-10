@@ -25,10 +25,9 @@ export default function ShalomServices() {
       <div className="">
         <InfoTop>
           <div className="flex items-center justify-center flex-wrap gap-4 text-center">
-            <h2 className="text-3xl font-semibold text-center uppercase">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-center uppercase">
               Envios por <strong className="text-[#E12326]">shalom</strong>
             </h2>
-            <img src="/SHALOM-AEREO-1.png" alt="Shalom" className="w-[50px]" />
             <ButtonRed className="rounded-full w-[120px]" onClick={handleShow}>
               {show ? 'Ocultar' : 'Ver más'}
             </ButtonRed>
