@@ -3,7 +3,7 @@ interface Link {
   color: 'white' | 'black';
   name: string;
   url: string;
-  id: string;
+  id: string | number;
 }
 
 interface BannerProps {

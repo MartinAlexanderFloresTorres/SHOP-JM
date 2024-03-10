@@ -28,10 +28,10 @@ const Category = ({ className, offsetPosition = 'inside', category }: CategoryPr
         <div className="w-full flex items-end">
           <div>
             <h2 className="text-black text-opacity-90 text-xl font-extrabold mb-1 line-clamp-1 uppercase">{category.name}</h2>
-            <ButtonBlack className="group text-white px-5 flex items-center gap-4 overflow-hidden">
-              <FaArrowRightLong className="text-[20px] transform opacity-0 group-hover:opacity-100 -ml-[30px] group-hover:-ml-[0px] transition-all duration-300" />
+            <ButtonBlack className="group text-white px-5 flex items-center gap-4 overflow-hidden w-[150px]">
+              <FaArrowRightLong className="w-[20px] min-w-[20px] transform opacity-0 group-hover:opacity-100 -ml-[30px] group-hover:-ml-[0px] transition-all duration-300" />
               <span className="text-nowrap pointer-events-none select-none text-[13px]">Ver todo</span>
-              <FaArrowRightLong className="text-[20px] transform opacity-100 group-hover:opacity-0 ml-0 group-hover:ml-[30px] transition-all duration-300" />
+              <FaArrowRightLong className="w-[20px] min-w-[20px] transform opacity-100 group-hover:opacity-0 ml-0 group-hover:ml-[30px] transition-all duration-300" />
             </ButtonBlack>
           </div>
         </div>

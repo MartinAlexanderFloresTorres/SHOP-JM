@@ -6,7 +6,7 @@ import { ButtonBlack, ButtonWhite } from '@/app/shared/components/ui/Buttons';
 export default function Product() {
   return (
     <article className="group w-full">
-      <div className="relative w-full h-fit overflow-hidden">
+      <div className="relative z-10 w-full h-fit overflow-hidden">
         <div className="select-none pointer-events-none absolute top-4 -left-10 py-2 px-11 transform -rotate-45 flex items-center justify-center text-center text-sm z-10 bg-black text-white font-bold uppercase">Agotado</div>
         <div className="select-none pointer-events-none absolute top-2 right-2 rounded-full flex items-center justify-center text-center w-[50px] h-[50px] text-sm z-10 bg-red-500 text-white font-bold uppercase">-40%</div>
 

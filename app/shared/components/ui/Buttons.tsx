@@ -13,7 +13,7 @@ export default function Button({ className, children, ...props }: ButtonProps) {
 
 const ButtonBlack = ({ className, children, ...props }: ButtonProps) => {
   return (
-    <Button className={twMerge('bg-black text-white border border-black hover:bg-opacity-80 active:scale-105', className)} {...props}>
+    <Button className={twMerge('bg-black text-center text-white border border-black hover:bg-opacity-80 active:scale-105', className)} {...props}>
       {children}
     </Button>
   );
@@ -27,4 +27,20 @@ const ButtonWhite = ({ className, children, ...props }: ButtonProps) => {
   );
 };
 
-export { ButtonBlack, ButtonWhite };
+const ButtonRed = ({ className, children, ...props }: ButtonProps) => {
+  return (
+    <Button className={twMerge('bg-[#E12326] text-white border border-[#E12326] hover:bg-opacity-80 active:scale-105', className)} {...props}>
+      {children}
+    </Button>
+  );
+};
+
+const ButtonWhiteOutline = ({ className, children, ...props }: ButtonProps) => {
+  return (
+    <Button className={twMerge('bg-black text-white border border-white hover:bg-white hover:bg-opacity-20 active:scale-105 px-8', className)} {...props}>
+      {children}
+    </Button>
+  );
+};
+
+export { ButtonBlack, ButtonWhite, ButtonRed, ButtonWhiteOutline };

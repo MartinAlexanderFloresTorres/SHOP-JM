@@ -26,8 +26,12 @@ const Prev = () => {
 export default function ProductList() {
   return (
     <div className="container p-4 md:p-6 my-8">
-      <div className="text-center p-4">
-        <h2 className="uppercase text-black mb-2 text-2xl font-bold text-center">Nuevo Productos</h2>
+      <div className="text-center py-4 pb-14">
+        <div className="flex items-center justify-center gap-4">
+          <span className="w-full border border-gray-200 h-0"></span>
+          <h2 className="uppercase text-black mb-2 text-2xl font-bold text-center text-nowrap">Nuevo Productos</h2>
+          <span className="w-full border border-gray-200 h-0"></span>
+        </div>
         <Link href={'#'} className="uppercase text-gray-500 text-sm border-b-2 border-b-gray-200">
           Ver todos
         </Link>

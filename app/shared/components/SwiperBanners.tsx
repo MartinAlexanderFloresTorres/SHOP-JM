@@ -3,6 +3,8 @@
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import 'swiper/css';
+import Image from 'next/image';
+import { ButtonWhiteOutline } from './ui/Buttons';
 
 const Next = () => {
   const swiper = useSwiper();
@@ -24,15 +26,28 @@ const Prev = () => {
 
 export default function SwiperBanners() {
   return (
-    <Swiper className="relative" slidesPerView={1}>
-      <SwiperSlide>
-        <img className="w-full h-full max-h-[650px] object-contain bg-black" src="/banner.webp" alt="slide1" />
+    <Swiper slidesPerView={1}>
+      <SwiperSlide className="relative">
+        <Image width={1200} height={500} priority className="w-full h-full max-h-[650px] object-cover bg-black" src="/presentacion.jpg" alt="slide1" />
+        <div className="flex items-center justify-center gap-4 absolute left-1/2 transform -translate-x-1/2 bottom-14 z-20">
+          <ButtonWhiteOutline>Hombre</ButtonWhiteOutline>
+          <ButtonWhiteOutline>Mujer</ButtonWhiteOutline>
+        </div>
       </SwiperSlide>
-      <SwiperSlide>
-        <img className="w-full h-full max-h-[650px] object-contain bg-black" src="/banner-2.webp" alt="slide1" />
+      <SwiperSlide className="relative">
+        <Image width={1200} height={500} priority className="w-full h-full max-h-[650px] object-cover bg-black" src="/banner.webp" alt="slide1" />
+        <div className="flex items-center justify-center gap-4 absolute left-1/2 transform -translate-x-1/2 bottom-14 z-20">
+          <ButtonWhiteOutline>Hombre</ButtonWhiteOutline>
+          <ButtonWhiteOutline>Mujer</ButtonWhiteOutline>
+        </div>
       </SwiperSlide>
-      <SwiperSlide>
-        <img className="w-full h-full max-h-[650px] object-contain bg-black" src="/banner-3.webp" alt="slide1" />
+      <SwiperSlide className="relative">
+        <Image width={1200} height={500} priority className="w-full h-full max-h-[650px] object-cover bg-black" src="/banner-2.webp" alt="slide1" />
+        <ButtonWhiteOutline className="absolute left-[22%] bottom-14 z-20">Comprar Ahora</ButtonWhiteOutline>
+      </SwiperSlide>
+      <SwiperSlide className="relative">
+        <Image width={1200} height={500} priority className="w-full h-full max-h-[650px] object-cover bg-black" src="/banner-3.webp" alt="slide1" />
+        <ButtonWhiteOutline className="absolute left-1/2 transform -translate-x-1/2 bottom-14 z-20">Comprar Ahora</ButtonWhiteOutline>
       </SwiperSlide>
 
       <div className="lg:block hidden">

@@ -1,11 +1,12 @@
 import React from 'react';
 import { ButtonBlack, ButtonWhite } from './ui/Buttons';
+import Image from 'next/image';
 
 interface Link {
   color: 'white' | 'black';
   name: string;
   url: string;
-  id: string;
+  id: string | number;
 }
 
 interface BannerProps {
@@ -18,7 +19,7 @@ interface BannerProps {
 export default function Banner({ title, description, image, links }: BannerProps) {
   return (
     <div className="relative w-full h-[400px] md:h-[500px]">
-      <img className="w-full h-full absolute inset-0 -z-10 object-cover select-none pointer-events-none" width="600" height="500" src={image} alt={title} />
+      <Image className="absolute inset-0 -z-10 object-cover select-none pointer-events-none w-full h-full" width="1300" height="500" priority src={image} alt={title} />
       <div className="banner container h-full flex justify-end flex-col p-4 md:p-6 text-white">
         <div className="max-w-[780px]">
           <h2 className="text-3xl md:text-5xl font-extrabold uppercase mb-4 line-clamp-3">{title}</h2>
