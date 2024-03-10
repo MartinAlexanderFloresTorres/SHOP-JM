@@ -1,5 +1,4 @@
 'use client';
-/* eslint-disable @next/next/no-img-element */
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -17,14 +16,14 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white px-8 py-2 border-b border-slate-100">
+      <header className="sticky top-0 z-50 bg-white px-4 py-2 border-b border-b-slate-100 ">
         {/* desktop */}
         <nav className="hidden lg:flex items-center justify-between gap-5 container">
           <Link href="/" className="block w-14 h-14 min-w-14 min-h-14">
             <img width="60" height="60" className="w-full h-full" src="/logo.avif" alt="logo" />
           </Link>
           <div className="flex-1 flex items-center">
-            <nav className="flex items-center gap-5 font-medium flex-1">
+            <nav className="flex items-center gap-4 font-medium flex-1">
               <Link href="/shop" className={twMerge('flex items-center gap-2 text-nowrap text-black hover:text-gray-400 transition-all')}>
                 <span>Hombre</span>
                 <svg width={9} height={9} aria-hidden="true" focusable="false" role="presentation" className="icon icon-chevron-down" viewBox="0 0 9 9">
@@ -70,8 +69,8 @@ export default function Header() {
         </nav>
 
         {/* movil */}
-        <nav className="lg:hidden grid grid-cols-3 items-center gap-5 container">
-          <div className="mr-auto flex items-center gap-5">
+        <nav className="lg:hidden grid grid-cols-3 items-center gap-3 container">
+          <div className="mr-auto flex items-center gap-2">
             <button className="w-[30px] h-[30px] rounded-full flex items-center justify-center transition-all" onClick={toggleMenu}>
               <span className="w-[30px] h-[30px] relative transition-all">
                 <span
@@ -98,7 +97,7 @@ export default function Header() {
             <img width="60" height="60" className="w-full h-full" src="/logo.avif" alt="logo" />
           </Link>
 
-          <div className="ml-auto flex items-center gap-5">
+          <div className="ml-auto flex items-center gap-2">
             <Link href="/cart" className="w-[30px] h-[30px] flex items-center gap-2 text-black hover:text-gray-400 transition-all" aria-label="Cart">
               <TbShoppingCart className="text-2xl" strokeWidth={2} />
             </Link>

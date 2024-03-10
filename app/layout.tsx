@@ -5,6 +5,7 @@ import InfoTop from './shared/components/InfoTop';
 import Header from './shared/components/Header';
 import './globals.css';
 import 'swiper/css';
+import Footer from './shared/components/Footer';
 
 const font = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
         </InfoTop>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

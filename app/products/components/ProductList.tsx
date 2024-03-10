@@ -8,8 +8,8 @@ import Product from './Product';
 const Next = () => {
   const swiper = useSwiper();
   return (
-    <button className="  text-gray-300 flex items-center justify-center w-12 h-12 bg-black" onClick={() => swiper.slideNext()}>
-      <FaChevronRight className="text-2xl block" />
+    <button className="text-black text-opacity-100 hover:text-opacity-50 transition-all duration-300 flex items-center justify-center w-12 h-12" onClick={() => swiper.slideNext()}>
+      <FaChevronRight className="text-[20px] block" />
     </button>
   );
 };
@@ -17,17 +17,17 @@ const Next = () => {
 const Prev = () => {
   const swiper = useSwiper();
   return (
-    <button className=" text-gray-300 flex items-center justify-center w-12 h-12 bg-black" onClick={() => swiper.slidePrev()}>
-      <FaChevronLeft className="text-2xl block" />
+    <button className="text-black text-opacity-100 hover:text-opacity-50 transition-all duration-300 flex items-center justify-center w-12 h-12" onClick={() => swiper.slidePrev()}>
+      <FaChevronLeft className="text-[20px] block" />
     </button>
   );
 };
 
 export default function ProductList() {
   return (
-    <div className="container p-4">
+    <div className="container p-4 md:p-6 my-8">
       <div className="text-center p-4">
-        <h2 className="uppercase text-black mb-2 text-3xl font-bold text-center">Nuevo Productos</h2>
+        <h2 className="uppercase text-black mb-2 text-2xl font-bold text-center">Nuevo Productos</h2>
         <Link href={'#'} className="uppercase text-gray-500 text-sm border-b-2 border-b-gray-200">
           Ver todos
         </Link>
@@ -64,7 +64,7 @@ export default function ProductList() {
           <Product />
         </SwiperSlide>
 
-        <div className="flex items-center justify-center gap-5">
+        <div className="flex items-center justify-center gap-5 pt-6">
           <Prev />
           <Next />
         </div>
