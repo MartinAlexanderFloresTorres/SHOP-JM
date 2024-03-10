@@ -6,8 +6,8 @@ interface SharedProps {
 
 export default function ShalomService({ servicio }: SharedProps) {
   return (
-    <a href={servicio.url} target="_blank" rel="noreferrer" key={servicio.id} className="bg-white group hover:bg-[#FF0000] hover:text-white shadow border border-gray-100 hover:border-[#FF0000] h-[360px] p-4 flex flex-col items-center justify-center gap-3 transition-colors duration-200">
-      <div className="min-w-[210px] mx-auto flex flex-col items-center justify-center gap-3">
+    <a href={servicio.url} target="_blank" rel="noreferrer" key={servicio.id} className="bg-white group hover:bg-[#FF0000] hover:text-white shadow border border-gray-100 hover:border-[#FF0000] h-[360px] p-2 md:p-4 flex flex-col items-center justify-center gap-3 transition-colors duration-200">
+      <div className="flex flex-col items-center justify-center gap-3">
         <div className="max-w-[170px] mx-auto grid grid-rows-3 items-center gap-3">
           <servicio.icon className="mx-auto text-6xl text-[#ff0000] group-hover:text-white" />
           <div>

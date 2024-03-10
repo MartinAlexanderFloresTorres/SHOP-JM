@@ -22,6 +22,7 @@ module.exports = {
       animation: {
         'fade-in': 'fadeIn 0.2s ease-in forwards',
         'fade-out': 'fadeOut 0.2s ease-in forwards',
+        'translate-left-to-right': 'translateLeftToRight 0.5s ease-in-out forwards',
       },
     },
   },

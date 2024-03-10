@@ -21,19 +21,18 @@ export default function ShalomServices() {
   const handleShow = () => setShow(!show);
 
   return (
-    <section className="">
-      <div className="">
-        <InfoTop>
-          <div className="flex items-center justify-center flex-wrap gap-4 text-center">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-center uppercase">
-              Envios por <strong className="text-[#E12326]">shalom</strong>
-            </h2>
-            <ButtonRed className="rounded-full w-[120px]" onClick={handleShow}>
-              {show ? 'Ocultar' : 'Ver más'}
-            </ButtonRed>
-          </div>
-        </InfoTop>
-      </div>
+    <section>
+      <InfoTop>
+        <div className="flex items-center justify-center flex-wrap gap-4 text-center">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-center uppercase">
+            Envios por <strong className="text-[#E12326]">shalom</strong>
+          </h2>
+          <ButtonRed className="rounded-full w-[120px]" onClick={handleShow}>
+            {show ? 'Ocultar' : 'Ver más'}
+          </ButtonRed>
+        </div>
+      </InfoTop>
+
       {show && (
         <div className="bg-[#E12326] mt-[100px] p-4 pb-40 animate-fade-in">
           <div className="max-w-[1400px] mx-auto">
@@ -42,11 +41,7 @@ export default function ShalomServices() {
               slidesPerView={5}
               spaceBetween={10}
               breakpoints={{
-                320: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                640: {
+                0: {
                   slidesPerView: 2,
                   spaceBetween: 10,
                 },

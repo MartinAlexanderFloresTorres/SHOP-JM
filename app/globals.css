@@ -36,6 +36,15 @@ input {
   }
 }
 
+@keyframes translateLeftToRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* banner */
 .banner:after {
   content: ' ';
@@ -48,4 +57,9 @@ input {
   height: 100%;
   z-index: -1;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 32%, rgba(0, 0, 0, 0.3) 49%, rgba(0, 0, 0, 0) 100%);
+}
+/* custom-grid-3 */
+.custom-grid-3 {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
 }

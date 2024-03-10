@@ -28,26 +28,26 @@ export default function SwiperBanners() {
   return (
     <Swiper slidesPerView={1}>
       <SwiperSlide className="relative">
-        <Image width={1200} height={500} priority className="w-full h-full max-h-[650px] object-cover bg-black" src="/presentacion.jpg" alt="slide1" />
-        <div className="flex items-center justify-center gap-4 absolute left-1/2 transform -translate-x-1/2 bottom-14 z-20">
+        <img className="block w-full h-[500px] object-cover bg-black" src="/presentacion.jpg" alt="slide1" />
+        <div className="flex items-center justify-center gap-4 absolute left-1/2 transform -translate-x-1/2 bottom-10 z-20">
           <ButtonWhiteOutline>Hombre</ButtonWhiteOutline>
           <ButtonWhiteOutline>Mujer</ButtonWhiteOutline>
         </div>
       </SwiperSlide>
       <SwiperSlide className="relative">
-        <Image width={1200} height={500} priority className="w-full h-full max-h-[650px] object-cover bg-black" src="/banner.webp" alt="slide1" />
-        <div className="flex items-center justify-center gap-4 absolute left-1/2 transform -translate-x-1/2 bottom-14 z-20">
+        <img className="block w-full h-[500px]  object-cover bg-black" src="/banner.webp" alt="slide1" />
+        <div className="flex items-center justify-center gap-4 absolute left-1/2 transform -translate-x-1/2 bottom-10 z-20">
           <ButtonWhiteOutline>Hombre</ButtonWhiteOutline>
           <ButtonWhiteOutline>Mujer</ButtonWhiteOutline>
         </div>
       </SwiperSlide>
       <SwiperSlide className="relative">
-        <Image width={1200} height={500} priority className="w-full h-full max-h-[650px] object-cover bg-black" src="/banner-2.webp" alt="slide1" />
-        <ButtonWhiteOutline className="absolute left-[22%] bottom-14 z-20">Comprar Ahora</ButtonWhiteOutline>
+        <img className="block w-full h-[500px] object-cover bg-black" src="/banner-2.webp" alt="slide1" />
+        <ButtonWhiteOutline className="absolute left-[22%] bottom-10 z-20">Comprar Ahora</ButtonWhiteOutline>
       </SwiperSlide>
       <SwiperSlide className="relative">
-        <Image width={1200} height={500} priority className="w-full h-full max-h-[650px] object-cover bg-black" src="/banner-3.webp" alt="slide1" />
-        <ButtonWhiteOutline className="absolute left-1/2 transform -translate-x-1/2 bottom-14 z-20">Comprar Ahora</ButtonWhiteOutline>
+        <img className="block w-full h-[500px]  object-cover bg-black" src="/banner-3.webp" alt="slide1" />
+        <ButtonWhiteOutline className="absolute left-1/2 transform -translate-x-1/2 bottom-10 z-20">Comprar Ahora</ButtonWhiteOutline>
       </SwiperSlide>
 
       <div className="lg:block hidden">

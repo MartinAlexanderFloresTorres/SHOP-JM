@@ -14,14 +14,14 @@ export default function Product() {
       </div>
       <div className="w-full">
         <div className="p-4">
-          <Link href={'#'} className="text-center block font-semibold text-[16px] line-clamp-1">
-            Polera Adidad - Negro
+          <Link href={'#'} className="text-center font-semibold text-[16px] line-clamp-1">
+            Polera Adidas
           </Link>
-          <div className="w-full flex gap-4 items-center justify-center text-[15px]">
-            <Link href={'#'} className="block text-center font-bold">
+          <div className="w-full flex flex-wrap gap-y-1 gap-x-4 items-center justify-center text-[15px]">
+            <Link href={'#'} className="text-center font-bold text-nowrap line-clamp-1">
               S/. 300.99
             </Link>
-            <Link href={'#'} className="block text-center line-through text-gray-500 text-[14px]">
+            <Link href={'#'} className="text-center line-through text-gray-500 text-[12px] md:text-[14px] text-nowrap line-clamp-1">
               S/. 350.99
             </Link>
           </div>
