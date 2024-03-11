@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import InfoTop from '@/app/shared/components/InfoTop';
 
 export const metadata: Metadata = {
   title: 'Nueva contraseña',
@@ -9,7 +8,6 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <>
-      <InfoTop>Tienda Store</InfoTop>
       <div className="form container">
         <h2 className="form__title">Ingresa tu nueva contraseña</h2>
 
