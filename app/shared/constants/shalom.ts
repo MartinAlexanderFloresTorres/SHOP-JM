@@ -1,9 +1,9 @@
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { LuPackageSearch } from 'react-icons/lu';
 import { MdOutlinePayment, MdOutlinePriceChange } from 'react-icons/md';
-import { Servicio } from '../components/shalom/ShalomServices';
+import { Service } from '@shared/interfaces/service';
 
-export const shalomServices: Servicio[] = [
+export const shalomServices: Service[] = [
   {
     id: 1,
     titulo: 'Busca tu agencia',

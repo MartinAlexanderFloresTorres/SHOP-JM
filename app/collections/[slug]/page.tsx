@@ -1,7 +1,6 @@
 'use client';
 import Banner from '@/app/shared/components/Banner';
-import React from 'react';
-import Filters from '../components/Filters';
+import Filters from '@/app/collections/components/Filters';
 import Product from '@/app/products/components/Product';
 
 export default function page() {

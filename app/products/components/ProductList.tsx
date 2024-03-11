@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import Product from './Product';
+import Product from '@/app/products/components/Product';
 
 const Next = () => {
   const swiper = useSwiper();

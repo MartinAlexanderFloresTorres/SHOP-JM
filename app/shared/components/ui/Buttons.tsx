@@ -21,7 +21,7 @@ const ButtonBlack = ({ className, children, ...props }: ButtonProps) => {
 
 const ButtonWhite = ({ className, children, ...props }: ButtonProps) => {
   return (
-    <Button className={twMerge('bg-white text-black border border-black hover:bg-opacity-80 active:scale-105', className)} {...props}>
+    <Button className={twMerge('bg-white text-black border hover:bg-opacity-80 active:scale-105', className)} {...props}>
       {children}
     </Button>
   );

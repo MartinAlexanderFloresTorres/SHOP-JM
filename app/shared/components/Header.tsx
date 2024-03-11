@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { FaRegUser } from 'react-icons/fa';
 import { TbShoppingCart } from 'react-icons/tb';
 import { twMerge } from 'tailwind-merge';
-import SearchMovil from './SearchMovil';
-import SearchDesktop from './SearchDesktop';
-import Modal from './ui/Modal';
+import SearchMovil from '@shared/components/SearchMovil';
+import SearchDesktop from '@shared/components/SearchDesktop';
+import Modal from '@shared/components/ui/Modal';
 import { IoChevronForward, IoCloseSharp, IoMenuSharp, IoSearch } from 'react-icons/io5';
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={twMerge('sticky top-0 z-50 bg-white px-4 py-2 border-b border-b-gray-200', pathname.includes('/collections') && 'static')}>
+      <header className={twMerge('sticky top-0 z-50 bg-white px-4 py-2 border-b border-b-gray-200 h-[70px]', pathname.includes('/collections') && 'static')}>
         {/* desktop */}
         <nav className="hidden lg:flex items-center justify-between gap-5 container">
           <Link href="/" className="block w-14 h-14 min-w-14 min-h-14">
@@ -93,7 +93,7 @@ export default function Header() {
         <Modal
           onClose={toggleMenu}
           classNameModal="animate-translate-left-to-right"
-          classNameHeader="py-2"
+          classNameHeader="py-2 h-[70px]"
           classNameContent="p-0 gap-0"
           childrenHeader={
             <div className="grid grid-cols-3 items-center gap-4">

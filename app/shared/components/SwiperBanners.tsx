@@ -1,10 +1,10 @@
 'use client';
 
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import { twMerge } from 'tailwind-merge';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import 'swiper/css';
-import Image from 'next/image';
-import { ButtonWhiteOutline } from './ui/Buttons';
+import { LinkBlack, LinkWhite } from '@shared/components/ui/Links';
 
 const Next = () => {
   const swiper = useSwiper();
@@ -24,36 +24,64 @@ const Prev = () => {
   );
 };
 
-export default function SwiperBanners() {
-  return (
-    <Swiper slidesPerView={1}>
-      <SwiperSlide className="relative">
-        <img className="block w-full h-[500px] object-cover bg-black" src="/presentacion.jpg" alt="slide1" />
-        <div className="flex items-center justify-center gap-4 absolute left-1/2 transform -translate-x-1/2 bottom-10 z-20">
-          <ButtonWhiteOutline>Hombre</ButtonWhiteOutline>
-          <ButtonWhiteOutline>Mujer</ButtonWhiteOutline>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className="relative">
-        <img className="block w-full h-[500px]  object-cover bg-black" src="/banner.webp" alt="slide1" />
-        <div className="flex items-center justify-center gap-4 absolute left-1/2 transform -translate-x-1/2 bottom-10 z-20">
-          <ButtonWhiteOutline>Hombre</ButtonWhiteOutline>
-          <ButtonWhiteOutline>Mujer</ButtonWhiteOutline>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className="relative">
-        <img className="block w-full h-[500px] object-cover bg-black" src="/banner-2.webp" alt="slide1" />
-        <ButtonWhiteOutline className="absolute left-[22%] bottom-10 z-20">Comprar Ahora</ButtonWhiteOutline>
-      </SwiperSlide>
-      <SwiperSlide className="relative">
-        <img className="block w-full h-[500px]  object-cover bg-black" src="/banner-3.webp" alt="slide1" />
-        <ButtonWhiteOutline className="absolute left-1/2 transform -translate-x-1/2 bottom-10 z-20">Comprar Ahora</ButtonWhiteOutline>
-      </SwiperSlide>
+interface Link {
+  id: string | number;
+  name: string;
+  url: string;
+  color: 'black' | 'white';
+}
 
-      <div className="lg:block hidden">
-        <Prev />
-        <Next />
-      </div>
+interface Banner {
+  id: string | number;
+  title: string;
+  theme: 'black' | 'white';
+  banner: {
+    type: 'image' | 'video';
+    url: string;
+  };
+  links: Link[];
+}
+
+interface SwiperBannersProps {
+  banners: Banner[];
+}
+
+export default function SwiperBanners({ banners = [] }: SwiperBannersProps) {
+  return (
+    <Swiper slidesPerView={1} autoplay={{ delay: 3000, disableOnInteraction: false }} modules={[Autoplay]}>
+      {banners.map(({ id, title, theme, banner, links }) => (
+        <SwiperSlide key={id} className="relative select-none">
+          {banner.type === 'image' && <img className="block w-full h-[calc(100vh-70px-40px)] min-h-[299px] object-cover bg-black pointer-events-none" src={banner.url} alt={title} />}
+          {banner.type === 'video' && <video className="block w-full h-[calc(100vh-70px-40px)] min-h-[299px] object-cover bg-black pointer-events-none" width="600" height="500" src={banner.url} autoPlay loop muted playsInline />}
+          <div className="overlay absolute inset-0 z-10">
+            <div className="w-full h-full flex flex-col items-center justify-center gap-4">
+              <h2 className={twMerge('text-center text-3xl md:text-4xl font-normal uppercase max-w-[700px] mx-auto', theme === 'black' ? 'text-black' : 'text-white')}>{title}</h2>
+              <div className="flex items-center justify-center gap-4">
+                {links.map(({ id, color, name, url }) => {
+                  if (color === 'black')
+                    return (
+                      <LinkBlack key={id} className="px-10 rounded-full" href={url}>
+                        {name}
+                      </LinkBlack>
+                    );
+                  return (
+                    <LinkWhite key={id} className="px-10 rounded-full" href={url}>
+                      {name}
+                    </LinkWhite>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+
+      {banners.length > 1 && (
+        <div className="lg:block hidden">
+          <Prev />
+          <Next />
+        </div>
+      )}
     </Swiper>
   );
 }

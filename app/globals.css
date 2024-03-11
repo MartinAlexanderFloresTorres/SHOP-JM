@@ -58,6 +58,19 @@ input {
   z-index: -1;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 32%, rgba(0, 0, 0, 0.3) 49%, rgba(0, 0, 0, 0) 100%);
 }
+.overlay:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* 30% isquierda y derecha oscuro y en centro un poco transparente */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 32%, rgba(0, 0, 0, 0.3) 49%, rgba(0, 0, 0, 0) 100%);
+}
 /* custom-grid-3 */
 .custom-grid-3 {
   display: grid;

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Select, { StylesConfig } from 'react-select';
 import { IoClose, IoSearch } from 'react-icons/io5';
-import Modal from '@/app/shared/components/ui/Modal';
+import Modal from '@shared/components/ui/Modal';
 
 const options = [
   { value: 'price-desc', label: 'Precio: Mayor a Menor' },

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { IoCloseSharp, IoSearch } from 'react-icons/io5';
-import Modal from './ui/Modal';
+import Modal from '@shared/components/ui/Modal';
 
 export default function SearchMovil() {
   const [isOpen, setIsOpen] = useState(false);

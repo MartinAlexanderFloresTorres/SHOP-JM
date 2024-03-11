@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import ImageSlide from './ImageSlide';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
-import { ButtonBlack, ButtonWhite } from '@/app/shared/components/ui/Buttons';
+import ImageSlide from '@/app/products/components/ImageSlide';
+import { ButtonWhite } from '@shared/components/ui/Buttons';
+import { LinkBlack } from '@shared/components/ui/Links';
 
 export default function Product() {
   return (
@@ -36,9 +37,9 @@ export default function Product() {
         </div>
 
         <div className="lg:group-hover:opacity-100 lg:opacity-0 transition-opacity duration-300 flex items-stretch w-full gap-1">
-          <ButtonBlack className="w-full" aria-label="Comprar Ahora">
+          <LinkBlack className="w-full" aria-label="Comprar Ahora">
             Comprar Ahora
-          </ButtonBlack>
+          </LinkBlack>
           <ButtonWhite className="w-fit" aria-label="Comprar Ahora">
             <HiOutlineShoppingBag className="text-2xl" />
           </ButtonWhite>
