@@ -6,7 +6,7 @@ import Banner from '@shared/components/Banner';
 import Search from '@shared/components/ui/Search';
 import Filter from '@shared/components/Filter';
 
-export default function page() {
+export default function Page() {
   return (
     <div>
       <Banner
