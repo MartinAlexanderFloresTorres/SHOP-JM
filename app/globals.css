@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --swiper-pagination-color: #000;
+}
+
 body {
   min-width: 360px;
 }
@@ -13,10 +17,12 @@ svg,
 input {
   user-select: none;
 }
+
 ::selection {
   background-color: #000;
   color: #fff;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;

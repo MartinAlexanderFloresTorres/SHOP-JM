@@ -1,27 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import Product from '@/app/products/components/Product';
-
-const Next = () => {
-  const swiper = useSwiper();
-  return (
-    <button className="text-black text-opacity-100 hover:text-opacity-50 transition-all duration-300 flex items-center justify-center w-12 h-12" onClick={() => swiper.slideNext()}>
-      <FaChevronRight className="text-[20px] block" />
-    </button>
-  );
-};
-
-const Prev = () => {
-  const swiper = useSwiper();
-  return (
-    <button className="text-black text-opacity-100 hover:text-opacity-50 transition-all duration-300 flex items-center justify-center w-12 h-12" onClick={() => swiper.slidePrev()}>
-      <FaChevronLeft className="text-[20px] block" />
-    </button>
-  );
-};
 
 export default function ProductList() {
   return (
@@ -41,6 +23,10 @@ export default function ProductList() {
         className="relative w-full"
         slidesPerView={5}
         spaceBetween={10}
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
         breakpoints={{
           0: { slidesPerView: 1, spaceBetween: 10 },
           460: { slidesPerView: 2, spaceBetween: 10 },
@@ -48,30 +34,26 @@ export default function ProductList() {
           980: { slidesPerView: 4, spaceBetween: 10 },
           1280: { slidesPerView: 5, spaceBetween: 10 },
         }}
+        loop={true}
       >
-        <SwiperSlide>
+        <SwiperSlide className="pb-12">
           <Product />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="pb-12">
           <Product />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="pb-12">
           <Product />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="pb-12">
           <Product />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="pb-12">
           <Product />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="pb-12">
           <Product />
         </SwiperSlide>
-
-        <div className="flex items-center justify-center gap-5 pt-6">
-          <Prev />
-          <Next />
-        </div>
       </Swiper>
     </div>
   );

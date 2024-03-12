@@ -20,7 +20,7 @@ export default function TranslateTop({ items, clasNameContainer = '' }: Translat
 
   return (
     <section className={twMerge('py-2 px-4 select-none', clasNameContainer)}>
-      <Swiper slidesPerView={1} wrapperClass="items-center" autoplay={{ delay: 3000, disableOnInteraction: false }} modules={[Autoplay]}>
+      <Swiper slidesPerView={1} wrapperClass="items-center" autoplay={{ delay: 3000, disableOnInteraction: false }} modules={[Autoplay]} loop={true}>
         {items.map(({ id, children }) => (
           <SwiperSlide key={id}>{children}</SwiperSlide>
         ))}

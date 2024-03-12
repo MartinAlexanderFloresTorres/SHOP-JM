@@ -23,6 +23,7 @@ export interface ModaProps {
 
 export default function Modal({ IconClose, onClose, allowCloseOnTouch = false, showHeader = false, title, description, childrenHeader, childrenFooter, classNameContainer, classNameModal, classNameHeader, classNameTitle, classNameDescription, classNameContent, classNameFooter, children }: ModaProps) {
   useEffect(() => {
+    // Evitar el scroll del body
     const originalOverflow = document.body.style.overflow;
     const originalPaddingRight = document.body.style.paddingRight;
     const paddingRight = window.innerWidth - document.body.clientWidth;
@@ -30,15 +31,24 @@ export default function Modal({ IconClose, onClose, allowCloseOnTouch = false, s
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = `${paddingRight}px`;
 
+    // Evento de ESC
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Limpiar
     return () => {
       document.body.style.overflow = originalOverflow;
       document.body.style.paddingRight = originalPaddingRight;
+      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [onClose]);
 
   return (
     <section
-      className={twMerge('fixed p-0 lg:p-4 bg-white lg:bg-black lg:bg-opacity-70 inset-0 z-50 w-full h-lvh transition-all animate-fade-in', classNameModal)}
+      className={twMerge('fixed p-0 lg:p-4 bg-white lg:bg-black lg:bg-opacity-70 inset-0 z-[999] w-full h-vh transition-all animate-fade-in', classNameModal)}
       onClick={({ currentTarget, target }) => {
         if (allowCloseOnTouch && currentTarget === target) onClose();
       }}

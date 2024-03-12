@@ -27,24 +27,22 @@ export default function Dropdown({ item }: DropdownProps) {
         {showMenuItem ? <LuMinus /> : <LuPlus />}
       </button>
       <div className={twMerge('transition-all duration-300 ease-in-out', showMenuItem ? 'max-h-[900px] opacity-100 pointer-events-auto' : 'max-h-0 opacity-0 pointer-events-none overflow-hidden')}>
-        <div className="p-4">
-          {item.items.map(({ title, descriptions, id }) => (
-            <div key={id}>
-              <h3 className="font-semibold text-[16px]">{title}</h3>
-              <div className="p-6 ml-6">
-                <ul>
-                  {descriptions.map(({ value, id }) => (
-                    <li className="list-disc text-sm" key={id}>
-                      {value}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        {item.items.map(({ title, descriptions, id }) => (
+          <div key={id} className="pb-4">
+            {title && <h3 className="font-semibold text-[16px] px-8 ml-12 mb-3 pl-0">{title}</h3>}
+            <div className="ml-16">
+              <ul>
+                {descriptions.map(({ value, id }) => (
+                  <li className="list-disc text-sm" key={id}>
+                    {value}
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
+          </div>
+        ))}
 
-          {item.itemChildren && item.itemChildren}
-        </div>
+        {item.itemChildren && item.itemChildren}
       </div>
     </div>
   );

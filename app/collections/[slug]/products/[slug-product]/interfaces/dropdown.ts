@@ -9,7 +9,7 @@ export interface Dropdown {
 }
 export interface DropdownItem {
   id: string | number;
-  title: string;
+  title?: string;
   descriptions: DropdownDescription[];
 }
 

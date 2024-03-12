@@ -1,27 +1,48 @@
 'use client';
 import Select from 'react-select';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Product from '@/app/products/components/Product';
 import { customStylesSelect } from '@shared/constants/custom-styles-select';
 import Banner from '@shared/components/Banner';
 import Search from '@shared/components/ui/Search';
 import Filter from '@shared/components/Filter';
 
-export default function page() {
+export default function Page() {
+  const params = useSearchParams();
+  const navigate = useRouter();
+
   return (
     <div>
-      <Banner
-        title="Collections"
-        description="Discover the best collections of the world."
-        image="https://source.unsplash.com/1600x900/?collections"
-        links={[
-          {
-            id: '1',
-            color: 'white',
-            name: 'Shop Now',
-            url: '/collections',
-          },
-        ]}
-      />
+      <Banner classContainer="h-full flex flex-col items-center justify-center mx-auto" classTitle="text-center" classDescription="text-center" title="Busca tus productos" description="Encuentra los productos que necesitas para tu hogar." image="/img/banner-search.jpg">
+        <Search
+          value={params.get('q') || ''}
+          valueCategory={params.get('category') || 'todos'}
+          classContainer="max-w-[700px] z-[60]"
+          onChange={({ search, category }) => {
+            navigate.push(`/search?q=${search}${category ? `&category=${category}` : ''}`);
+          }}
+          placeholderSearch="Buscar productos..."
+          placeholderSelect="Categoría"
+          options={[
+            { value: 'todos', label: 'todos' },
+            { value: 'hombre', label: 'hombre' },
+            { value: 'mujer', label: 'mujer' },
+            { value: 'niño', label: 'niño' },
+            { value: 'niña', label: 'niña' },
+            { value: 'bebe', label: 'bebe' },
+            { value: 'accesorios', label: 'accesorios' },
+            { value: 'zapatos', label: 'zapatos' },
+            { value: 'ropa', label: 'ropa' },
+            { value: 'deportes', label: 'deportes' },
+            { value: 'tecnología', label: 'tecnología' },
+            { value: 'hogar', label: 'hogar' },
+            { value: 'muebles', label: 'muebles' },
+            { value: 'electrodomésticos', label: 'electrodomésticos' },
+            { value: 'mascotas', label: 'mascotas' },
+            { value: 'juguetes', label: 'juguetes' },
+          ]}
+        />
+      </Banner>
 
       <section className="bg-white border-b border-b-gray-200">
         <div className="container flex items-center justify-between gap-10 p-4">
@@ -134,8 +155,6 @@ export default function page() {
                 },
               ]}
             />
-
-            <Search classContainer="z-0 hidden lg:flex max-w-[700px]" onChange={(value) => console.log(value)} placeholderSearch="Buscar en esta colección" options={[{ value: '1', label: 'Option 1' }]} valueCategory="1" optionDisabled={true} />
           </div>
 
           <Select
@@ -159,10 +178,6 @@ export default function page() {
           />
         </div>
       </section>
-
-      <div className="block lg:hidden p-4">
-        <Search classContainer="w-full max-w-full z-10" onChange={(value) => console.log(value)} placeholderSearch="Buscar en esta colección" options={[{ value: '1', label: 'Option 1' }]} valueCategory="1" optionDisabled={true} />
-      </div>
 
       <section className="container grid gap-4 p-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
         <Product />

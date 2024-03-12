@@ -11,7 +11,6 @@ export const dropdowns = [
     items: [
       {
         id: 1,
-        title: 'Envíos a todo el Perú',
         descriptions: [
           {
             id: 1,
@@ -49,7 +48,6 @@ export const dropdowns = [
     items: [
       {
         id: 1,
-        title: 'Cambios y Devoluciones',
         descriptions: [
           {
             id: 1,
@@ -74,7 +72,6 @@ export const dropdowns = [
     items: [
       {
         id: 1,
-        title: 'Garantía',
         descriptions: [
           {
             id: 1,
@@ -99,7 +96,6 @@ export const dropdowns = [
     items: [
       {
         id: 1,
-        title: 'Formas de Pago',
         descriptions: [
           {
             id: 1,
@@ -131,7 +127,6 @@ export const dropdowns = [
     items: [
       {
         id: 1,
-        title: 'Contacto',
         descriptions: [
           {
             id: 1,

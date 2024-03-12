@@ -6,6 +6,7 @@ import Footer from '@shared/components/Footer';
 import TranslateTop from '@shared/components/TranslateTop';
 import './globals.css';
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 const font = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'] });
 

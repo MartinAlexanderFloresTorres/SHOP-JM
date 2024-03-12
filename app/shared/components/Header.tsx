@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={twMerge('sticky top-0 z-50 bg-white px-4 py-2 border-b border-b-gray-200 h-[70px]')}>
+      <header className={twMerge('sticky top-0 z-[900] bg-white px-4 py-2 border-b border-b-gray-200 h-[70px]')}>
         {/* desktop */}
         <nav className="hidden lg:flex items-center justify-between gap-5 container">
           <Link href="/" className="block w-14 h-14 min-w-14 min-h-14">
@@ -59,7 +59,7 @@ export default function Header() {
             </nav>
 
             <div className="flex items-center gap-4">
-              <SearchDesktop />
+              {pathname !== '/search' && <SearchDesktop />}
               <Link href="/cart" className="w-[30px] h-[30px] flex items-center gap-2 text-black hover:text-gray-400 transition-all" aria-label="Cart">
                 <TbShoppingCart className="text-2xl" strokeWidth={2} />
               </Link>
@@ -76,7 +76,7 @@ export default function Header() {
             <button className="w-[30px] h-[30px] rounded-full flex items-center justify-center transition-all" onClick={toggleMenu}>
               <IoMenuSharp className="text-2xl" />
             </button>
-            <SearchMovil />
+            {pathname !== '/search' && <SearchMovil />}
           </div>
 
           <Link href="/" className="block mx-auto w-14 h-14 min-w-14 min-h-14">

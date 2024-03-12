@@ -48,7 +48,7 @@ interface SwiperBannersProps {
 
 export default function SwiperBanners({ banners = [] }: SwiperBannersProps) {
   return (
-    <Swiper slidesPerView={1} autoplay={{ delay: 3000, disableOnInteraction: false }} modules={[Autoplay]}>
+    <Swiper slidesPerView={1} autoplay={{ delay: 3000, disableOnInteraction: false }} modules={[Autoplay]} loop={true}>
       {banners.map(({ id, title, theme, banner, links }) => (
         <SwiperSlide key={id} className="relative select-none">
           {banner.type === 'image' && <img className="block w-full h-[calc(100vh-70px-40px)] min-h-[299px] object-cover bg-black pointer-events-none" src={banner.url} alt={title} />}

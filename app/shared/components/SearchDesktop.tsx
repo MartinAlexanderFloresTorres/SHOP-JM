@@ -1,14 +1,37 @@
-import { IoSearch } from 'react-icons/io5';
+import { useRouter } from 'next/navigation';
+import Search from '@shared/components/ui/Search';
 
 export default function SearchDesktop() {
+  const navigate = useRouter();
+
   return (
     <>
-      <form className="flex items-center gap-2 relative w-[400px] h-fit mx-auto">
-        <input type="text" placeholder="Buscar" className="w-full pl-4 py-3 pr-12 font-normal text-gray-500 placeholder:text-gray-400 border border-gray-200 rounded-full focus-visible:outline-none focus-visible:border-gray-300 transition-colors" />
-        <button type="submit" className="absolute to-50% right-1 bg-black bg-opacity-100 text-white hover:bg-opacity-70 transition-all w-10 h-10 flex items-center justify-center rounded-full focus-visible:outline-none" aria-label="Search">
-          <IoSearch className="text-2xl" />
-        </button>
-      </form>
+      <Search
+        options={[
+          { value: 'todos', label: 'todos' },
+          { value: 'hombre', label: 'hombre' },
+          { value: 'mujer', label: 'mujer' },
+          { value: 'niño', label: 'niño' },
+          { value: 'niña', label: 'niña' },
+          { value: 'bebe', label: 'bebe' },
+          { value: 'accesorios', label: 'accesorios' },
+          { value: 'zapatos', label: 'zapatos' },
+          { value: 'ropa', label: 'ropa' },
+          { value: 'deportes', label: 'deportes' },
+          { value: 'tecnología', label: 'tecnología' },
+          { value: 'hogar', label: 'hogar' },
+          { value: 'muebles', label: 'muebles' },
+          { value: 'electrodomésticos', label: 'electrodomésticos' },
+          { value: 'mascotas', label: 'mascotas' },
+          { value: 'juguetes', label: 'juguetes' },
+        ]}
+        placeholderSearch="Buscar productos..."
+        placeholderSelect="Categoría"
+        onChange={({ search, category }) => {
+          console.log({ search, category });
+          navigate.push(`/search?q=${search}${category ? `&category=${category}` : ''}`);
+        }}
+      />
     </>
   );
 }
