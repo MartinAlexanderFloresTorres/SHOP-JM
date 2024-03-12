@@ -1,5 +1,6 @@
 'use client';
 import Select from 'react-select';
+import { Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Product from '@/app/products/components/Product';
 import { customStylesSelect } from '@shared/constants/custom-styles-select';
@@ -12,7 +13,7 @@ export default function Page() {
   const navigate = useRouter();
 
   return (
-    <div>
+    <Suspense>
       <Banner classContainer="h-full flex flex-col items-center justify-center mx-auto" classTitle="text-center" classDescription="text-center" title="Busca tus productos" description="Encuentra los productos que necesitas para tu hogar." image="/img/banner-search.jpg">
         <Search
           value={params.get('q') || ''}
@@ -207,6 +208,6 @@ export default function Page() {
         <Product />
         <Product />
       </section>
-    </div>
+    </Suspense>
   );
 }
