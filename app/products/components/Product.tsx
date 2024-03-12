@@ -15,14 +15,14 @@ export default function Product() {
       </div>
       <div className="w-full">
         <div className="p-4">
-          <Link href={'#'} className="text-center font-semibold text-[16px] line-clamp-1">
+          <Link href={'/collections/collecion-name/products/product-name'} className="text-center font-semibold text-[16px] line-clamp-1">
             Polera Adidas
           </Link>
           <div className="w-full flex flex-wrap gap-y-1 gap-x-4 items-center justify-center text-[15px]">
-            <Link href={'#'} className="text-center font-bold text-nowrap line-clamp-1">
+            <Link href={'/collections/collecion-name/products/product-name'} className="text-center font-bold text-nowrap line-clamp-1">
               S/. 300.99
             </Link>
-            <Link href={'#'} className="text-center line-through text-gray-500 text-[12px] md:text-[14px] text-nowrap line-clamp-1">
+            <Link href={'/collections/collecion-name/products/product-name'} className="text-center line-through text-gray-500 text-[12px] md:text-[14px] text-nowrap line-clamp-1">
               S/. 350.99
             </Link>
           </div>
@@ -37,7 +37,7 @@ export default function Product() {
         </div>
 
         <div className="lg:group-hover:opacity-100 lg:opacity-0 transition-opacity duration-300 flex items-stretch w-full gap-1">
-          <LinkBlack className="w-full" aria-label="Comprar Ahora">
+          <LinkBlack className="w-full" aria-label="Comprar Ahora" href={'/collections/collecion-name/products/product-name'}>
             Comprar Ahora
           </LinkBlack>
           <ButtonWhite className="w-fit" aria-label="Comprar Ahora">

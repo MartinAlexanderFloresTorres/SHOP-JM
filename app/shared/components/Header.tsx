@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={twMerge('sticky top-0 z-50 bg-white px-4 py-2 border-b border-b-gray-200 h-[70px]', pathname.includes('/collections') && 'static')}>
+      <header className={twMerge('sticky top-0 z-50 bg-white px-4 py-2 border-b border-b-gray-200 h-[70px]')}>
         {/* desktop */}
         <nav className="hidden lg:flex items-center justify-between gap-5 container">
           <Link href="/" className="block w-14 h-14 min-w-14 min-h-14">

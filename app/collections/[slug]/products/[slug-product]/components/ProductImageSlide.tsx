@@ -19,17 +19,37 @@ const Prev = () => {
     </button>
   );
 };
-export default function ImageSlide() {
-  return (
-    <Swiper className="group" slidesPerView={1} spaceBetween={0} loop={true}>
-      <SwiperSlide>
-        <img className="select-none w-full h-[400px] object-cover object-top" src="/img/products/imagen.webp" alt="product" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img className="select-none w-full h-[400px] object-cover object-top" src="/img/products/imagen-2.webp" alt="product" />
-      </SwiperSlide>
 
-      <div className="lg:group-hover:opacity-100 lg:opacity-0 transition-opacity duration-300">
+interface ImageSlide {
+  url: string;
+  id: string | number;
+}
+
+interface ProductImageSlideProps {
+  images: ImageSlide[];
+}
+
+export default function ProductImageSlide({ images = [] }: ProductImageSlideProps) {
+  return (
+    <Swiper
+      className="group w-full h-[calc(100vh-70px)]"
+      slidesPerView={1}
+      spaceBetween={0}
+      breakpoints={{
+        1124: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+      }}
+      loop={true}
+    >
+      {images.map(({ url, id }) => (
+        <SwiperSlide key={id}>
+          <img className="pointer-events-none w-full h-full object-cover" src={url} alt="Product Image" />
+        </SwiperSlide>
+      ))}
+
+      <div className="xl:group-hover:opacity-100 xl:opacity-0 transition-opacity duration-300">
         <Prev />
         <Next />
       </div>

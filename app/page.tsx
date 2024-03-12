@@ -1,8 +1,9 @@
+import ProductList from '@/app/products/components/ProductList';
+import Collections from '@/app/collections/components/Collections';
 import SwiperBanners from '@shared/components/SwiperBanners';
 import Banner from '@shared/components/Banner';
-import ProductList from '@/app/products/components/ProductList';
+import Features from '@shared/components/Features';
 import BannerVideo from '@shared/components/BannerVideo';
-import Collections from '@/app/collections/components/Collections';
 
 export default function Page() {
   return (
@@ -62,6 +63,8 @@ export default function Page() {
           },
         ]}
       />
+      <Features />
+
       <Banner title="Nuevas colecciónes" description="Primavera / Verano / 2022." image="https://tienda-de-white.netlify.app/img/banner-2.jpg" links={[{ color: 'white', name: 'Ver Productos', url: '/collections/1', id: '1' }]} />
       <Collections
         categories={[
