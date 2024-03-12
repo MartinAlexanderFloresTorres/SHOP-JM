@@ -38,7 +38,7 @@ export default function Modal({ IconClose, onClose, allowCloseOnTouch = false, s
 
   return (
     <section
-      className={twMerge('fixed p-0 lg:p-4 bg-white lg:bg-black lg:bg-opacity-70 inset-0 z-50 w-full h-dvh transition-all animate-fade-in', classNameModal)}
+      className={twMerge('fixed p-0 lg:p-4 bg-white lg:bg-black lg:bg-opacity-70 inset-0 z-50 w-full h-lvh transition-all animate-fade-in', classNameModal)}
       onClick={({ currentTarget, target }) => {
         if (allowCloseOnTouch && currentTarget === target) onClose();
       }}
