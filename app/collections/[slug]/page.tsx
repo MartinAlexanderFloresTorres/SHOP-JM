@@ -24,8 +24,8 @@ export default function Page() {
       />
 
       <section className="bg-white border-b border-b-gray-200">
-        <div className="container flex items-center justify-between gap-10 p-4">
-          <div className="flex items-center justify-start gap-6 w-full">
+        <div className="container flex items-center justify-between gap-6 p-4 w-full">
+          <div className="flex items-center lg:justify-start gap-6 md:w-full">
             <Filter
               options={[
                 {
@@ -154,8 +154,9 @@ export default function Page() {
               { value: 'stock', label: 'Mayor Stock' },
               { value: 'views', label: 'Mayor Vistas' },
             ]}
-            className="ml-auto w-[260px] z-20 text-nowrap"
+            className="md:ml-auto md:min-w-[360px] max-w-[400px] w-full md:w-fit z-20 text-nowrap"
             styles={customStylesSelect}
+            isSearchable={false}
           />
         </div>
       </section>

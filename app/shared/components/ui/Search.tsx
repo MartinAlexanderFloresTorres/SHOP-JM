@@ -18,10 +18,11 @@ interface SearchProps {
   placeholderSelect?: string;
   placeholderSearch?: string;
   classContainer?: string;
+  classSelect?: string;
   onChange: (value: { search: string; category?: string | undefined }) => void;
 }
 
-export default function Search({ options = [], optionDisabled, value = '', placeholderSearch = '', placeholderSelect = '', classContainer, valueCategory = undefined, onChange }: SearchProps) {
+export default function Search({ options = [], optionDisabled, value = '', placeholderSearch = '', placeholderSelect = '', classContainer, classSelect, valueCategory = undefined, onChange }: SearchProps) {
   const [search, setSearch] = useState(value);
   const [category, setCategory] = useState<string | undefined>(valueCategory);
 
@@ -60,7 +61,7 @@ export default function Search({ options = [], optionDisabled, value = '', place
         <input type="text" placeholder={placeholderSearch} value={search} onChange={handleSearch} className="w-full pl-10 pr-[200px] py-3 font-normal text-gray-500 placeholder:text-gray-400 border border-gray-200 rounded-full focus-visible:outline-none focus-visible:border-gray-300 transition-colors" />
 
         <div className="absolute to-50% right-2">
-          <Select placeholder={placeholderSelect} options={options} value={options.find((option) => option.value === category)} onChange={handleCategory} className="w-[180px] z-20 text-nowrap rounded-full select-none" styles={customStylesSelect} isDisabled={optionDisabled} />
+          <Select placeholder={placeholderSelect} isSearchable={false} options={options} value={options.find((option) => option.value === category)} onChange={handleCategory} className={twMerge('min-w-[200px] z-20 text-nowrap rounded-full select-none', classSelect)} styles={customStylesSelect} isDisabled={optionDisabled} />
         </div>
       </form>
     </>

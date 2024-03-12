@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import Modal from '@shared/components/ui/Modal';
+import { twMerge } from 'tailwind-merge';
 
 interface OptionItem {
   id: string | number;
@@ -19,16 +20,17 @@ interface Option {
 interface FilterProps {
   options?: Option[];
   optionDisabled?: boolean;
+  className?: string;
 }
 
-export default function Filter({ options = [], optionDisabled }: FilterProps) {
+export default function Filter({ options = [], optionDisabled, className }: FilterProps) {
   const [showFilters, setShowFilters] = useState(false);
 
   const toggleFilters = () => setShowFilters(!showFilters);
 
   return (
     <>
-      <button className="flex items-center gap-2" onClick={toggleFilters}>
+      <button className={twMerge('flex items-center gap-2 w-fit', className)} onClick={toggleFilters}>
         <svg width="23" height="19" viewBox="0 0 20 20" strokeWidth="1.25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <line x1="1" y1="6" x2="19" y2="6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></line>
           <line x1="1" y1="14" x2="19" y2="14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></line>
