@@ -48,19 +48,31 @@ export default function Page() {
               <div>
                 <h2 className="text-sm mb-2 font-bold text-gray-500">Talla</h2>
                 <div className="flex flex-wrap items-stretch gap-3">
-                  <ButtonWhite className="px-6 py-3 flex items-center justify-center text-center font-normal">X</ButtonWhite>
-                  <ButtonWhite className="px-6 py-3 flex items-center justify-center text-center font-normal">X</ButtonWhite>
-                  <ButtonWhite className="px-6 py-3 flex items-center justify-center text-center font-normal">X</ButtonWhite>
-                  <ButtonWhite className="px-6 py-3 flex items-center justify-center text-center font-normal">X</ButtonWhite>
+                  <button className="relative flex items-center justify-center w-[34px] h-[34px] border-2 rounded-full border-gray-200 focus-within:outline focus-within:outline-offset-1 focus-within:outline-red-400 p-[3px] bg-white disabled:opacity-70 disabled:cursor-not-allowed disabled:text-[#cccccc]" aria-label="Talla S" disabled>
+                    <span className="text-sm z-[1]">S</span>
+                    <span className="w-[95%] flex items-center justify-center h-[1.5px] absolute top-[50%] bottom-[50%] left-0 right-0 transform -rotate-45 bg-gray-200"></span>
+                  </button>
+
+                  <button className="relative flex items-center justify-center w-[34px] h-[34px] border-2 rounded-full border-gray-200 focus-within:outline focus-within:outline-offset-1 focus-within:outline-red-400 p-[3px] bg-white" aria-label="Talla M">
+                    <span className="text-sm z-[1]">M</span>
+                  </button>
+
+                  <button className="relative flex items-center justify-center w-[34px] h-[34px] border-2 rounded-full border-gray-200 focus-within:outline focus-within:outline-offset-1 focus-within:outline-red-400 p-[3px] bg-white" aria-label="Talla L">
+                    <span className="text-sm z-[1]">L</span>
+                  </button>
+
+                  <button className="relative flex items-center justify-center w-[34px] h-[34px] border-2 rounded-full border-gray-200 focus-within:outline focus-within:outline-offset-1 focus-within:outline-red-400 p-[3px] bg-white" aria-label="Talla XL">
+                    <span className="text-sm z-[1]">XL</span>
+                  </button>
                 </div>
               </div>
               <div>
                 <h2 className="text-sm mb-2 font-bold text-gray-500">Color</h2>
                 <div className="flex flex-wrap items-center justify-center gap-4 my-2">
-                  <button className="relative flex items-center justify-center w-[28px] h-[28px] border-2 rounded-full border-gray-200 focus-within:outline focus-within:outline-offset-1 focus-within:outline-red-400 p-[3px] bg-white" aria-label="Color blanco">
+                  <button className="relative flex items-center justify-center w-[34px] h-[34px] border-2 rounded-full border-gray-200 focus-within:outline focus-within:outline-offset-1 focus-within:outline-red-400 p-[3px] bg-white" aria-label="Color blanco">
                     <span className="w-full h-full bg-white rounded-full pointer-events-none"></span>
                   </button>
-                  <button className="relative flex items-center justify-center w-[28px] h-[28px] border-2 rounded-full border-gray-200 focus-within:outline focus-within:outline-offset-1 focus-within:outline-red-400 p-[3px] bg-white" aria-label="Color Negro">
+                  <button className="relative flex items-center justify-center w-[34px] h-[34px] border-2 rounded-full border-gray-200 focus-within:outline focus-within:outline-offset-1 focus-within:outline-red-400 p-[3px] bg-white" aria-label="Color Negro">
                     <span className="w-full h-full bg-black rounded-full pointer-events-none"></span>
                   </button>
                 </div>

@@ -18,6 +18,17 @@ input {
   user-select: none;
 }
 
+input,
+input:focus,
+textarea,
+textarea:focus,
+select,
+select:focus,
+button,
+button:focus {
+  outline: none;
+}
+
 ::selection {
   background-color: #000;
   color: #fff;
@@ -80,4 +91,23 @@ input {
 .custom-grid-3 {
   display: grid;
   grid-template-columns: 50px 1fr 50px;
+}
+/* carts-items */
+.carts-items article:last-child {
+  border: none;
+}
+
+/* input */
+.form-text-focus input:focus ~ label,
+.form-text-focus input:focus-visible ~ label,
+.form-text-focus input:focus-within ~ label,
+.form-text-focus select:focus ~ label,
+.form-text-focus select:focus-visible ~ label,
+.form-text-focus select:focus-within ~ label,
+.form-text-focus textarea:focus ~ label,
+.form-text-focus textarea:focus-visible ~ label,
+.form-text-focus textarea:focus-within ~ label,
+.form-text-focus label.active {
+  font-size: 12px;
+  transform: translateY(-16px);
 }
