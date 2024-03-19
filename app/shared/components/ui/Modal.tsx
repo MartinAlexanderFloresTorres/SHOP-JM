@@ -49,12 +49,12 @@ export default function Modal({ IconClose, onClose, allowCloseOnTouch = false, c
 
   return (
     <section
-      className={twMerge('fixed p-0 lg:p-4 bg-white lg:bg-black lg:bg-opacity-70 inset-0 z-[999] w-full h-vh transition-all animate-fade-in', center && 'flex flex-col justify-center items-center', classNameModal)}
+      className={twMerge('fixed p-0 lg:p-4 bg-white lg:bg-black lg:bg-opacity-70 inset-0 z-[999] w-full h-vh transition-all animate-fade-in', center && 'lg:flex lg:flex-col lg:justify-center lg:items-center', classNameModal)}
       onClick={({ currentTarget, target }) => {
         if (allowCloseOnTouch && currentTarget === target) onClose();
       }}
     >
-      <div className={twMerge('bg-white lg:max-w-[700px] lg:mx-auto flex flex-col w-full overflow-auto animate-fade-in-scale', center ? 'h-fit' : 'h-full', classNameContainer)}>
+      <div className={twMerge('bg-white lg:max-w-[700px] lg:mx-auto flex flex-col w-full overflow-auto', center ? 'h-full lg:h-fit lg:animate-fade-in-scale' : 'h-full', classNameContainer)}>
         {showHeader && !childrenHeader ? (
           <div className={twMerge('custom-grid-3 items-center gap-4 sticky bg-white border-b border-b-gray-200 top-0 z-10 p-4', classNameHeader)}>
             <span></span>
