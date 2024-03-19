@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { IoChevronDown } from 'react-icons/io5';
 import { Checkbox, Input, Label, Select, Radio } from '@shared/components/ui/Input';
 import { ButtonBlack } from '@shared/components/ui/Buttons';
+import Dropdown from '../shared/components/ui/Dropdown';
 
 export default function Page() {
   return (
@@ -83,32 +83,25 @@ export default function Page() {
           <h2 className="text-lg font-semibold uppercase">Resumen del pedido</h2>
         </div>
 
-        <div>
-          <button className="flex items-center justify-between gap-4 w-full p-4 bg-white border-b border-t border-gray-200">
-            <p className="text-sm">(1) Producto</p>
-            <IoChevronDown className="text-xl" />
-          </button>
-
-          <div>
-            <article className="w-full flex items-center justify-between gap-6 p-4">
-              <div className="flex items-center gap-4">
-                <div className="relative w-[60px] h-[70px]">
-                  <img src="/img/products/imagen.webp" className="w-full h-full object-cover object-top" alt="Producto" />
-                  <span className="absolute -top-[10px] -right-[10px] bg-black rounded-full w-[24px] h-[24px] text-xs font-bold flex items-center justify-center text-center text-white p-1">1</span>
-                </div>
-                <div>
-                  <h6 className="text-sm font-semibold uppercase">Camisa Safe - Vino</h6>
-                  <p className="text-xs text-gray-400">M / BLACK</p>
-                </div>
+        <Dropdown title="(1) Producto" active={true} classButton="w-full p-4 bg-white border-b-0 border-t" classContent="border-b-0 border-t">
+          <article className="w-full flex items-center justify-between gap-6 px-4">
+            <div className="flex items-center gap-4">
+              <div className="relative w-[60px] h-[70px]">
+                <img src="/img/products/imagen.webp" className="w-full h-full object-cover object-top" alt="Producto" />
+                <span className="absolute -top-[10px] -right-[10px] bg-black rounded-full w-[24px] h-[24px] text-xs font-bold flex items-center justify-center text-center text-white p-1">1</span>
               </div>
-
               <div>
-                <p className="text-nowrap text-xs text-gray-700 line-through mb-1">S/ 100.000</p>
-                <p className="text-nowrap text-sm font-semibold">S/ 50.000</p>
+                <h6 className="text-sm font-semibold uppercase">Camisa Safe - Vino</h6>
+                <p className="text-xs text-gray-400">M / BLACK</p>
               </div>
-            </article>
-          </div>
-        </div>
+            </div>
+
+            <div>
+              <p className="text-nowrap text-xs text-gray-700 line-through mb-1">S/ 100.000</p>
+              <p className="text-nowrap text-sm font-semibold">S/ 50.000</p>
+            </div>
+          </article>
+        </Dropdown>
 
         <div className="flex flex-col justify-between">
           <div className="flex items-center justify-between gap-4 w-full px-4 py-2 bg-white border-b border-t border-gray-200">

@@ -19,6 +19,8 @@ export default function Header() {
   const navigate = useRouter();
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const isAuthenticated = false;
+
   return (
     <>
       <header className={twMerge('sticky top-0 z-[900] bg-white px-4 py-2 border-b border-b-gray-200 h-[70px]')}>
@@ -66,7 +68,7 @@ export default function Header() {
               <Link href="/cart" className="w-[30px] h-[30px] flex items-center gap-2 text-black hover:text-gray-400 transition-all" aria-label="Cart">
                 <TbShoppingCart className="text-2xl" strokeWidth={2} />
               </Link>
-              <Link href="/cart" className="w-[30px] h-[30px] flex items-center gap-2 text-black hover:text-gray-400 transition-all" aria-label="User">
+              <Link href="/account" className="w-[30px] h-[30px] flex items-center gap-2 text-black hover:text-gray-400 transition-all" aria-label="User">
                 <FaRegUser className="text-2xl" />
               </Link>
             </div>

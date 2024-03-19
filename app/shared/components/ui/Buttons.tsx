@@ -5,7 +5,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export default function Button({ className, children, ...props }: ButtonProps) {
   return (
-    <button className={twMerge('block py-2 px-2 text-[14px] transition-all duration-300 font-bold uppercase', className)} {...props}>
+    <button className={twMerge('block py-2 px-6 text-[14px] transition-all duration-300 font-bold uppercase', className)} {...props}>
       {children}
     </button>
   );

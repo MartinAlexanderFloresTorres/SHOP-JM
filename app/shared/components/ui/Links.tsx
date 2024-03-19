@@ -5,7 +5,7 @@ interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 export default function LinkUI({ className, children, href = '#', ...props }: LinkProps) {
   return (
-    <Link href={href} {...props} className={twMerge('block py-2 px-2 text-[14px] transition-all duration-300 font-bold uppercase', className)}>
+    <Link href={href} {...props} className={twMerge('block py-2 px-6 text-[14px] transition-all duration-300 font-bold uppercase', className)}>
       {children}
     </Link>
   );

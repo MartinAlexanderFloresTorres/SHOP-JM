@@ -11,6 +11,7 @@ import Filter from '@shared/components/Filter';
 function SearchPage() {
   const params = useSearchParams();
   const navigate = useRouter();
+
   return (
     <>
       <Banner classContainer="h-full flex flex-col items-center justify-center mx-auto" classTitle="text-center" classDescription="text-center" title="Busca tus productos" description="Encuentra los productos que necesitas para tu hogar." image="/img/banner-search.jpg">

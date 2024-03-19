@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Roboto } from 'next/font/google';
+import { Roboto_Condensed } from 'next/font/google';
 import Header from '@shared/components/Header';
 import Footer from '@shared/components/Footer';
 import TranslateTop from '@shared/components/TranslateTop';
@@ -8,7 +8,7 @@ import './globals.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const font = Roboto({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'] });
+const font = Roboto_Condensed({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700', '900'] });
 
 export const metadata: Metadata = {
   title: 'Store | Te da la bienvenida',
@@ -72,7 +72,7 @@ export default function RootLayout({
           ]}
         />
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

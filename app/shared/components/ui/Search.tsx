@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Select from 'react-select';
-import { useDebouncedCallback } from 'use-debounce';
 import { IoSearch } from 'react-icons/io5';
 import { customStylesSelect } from '@shared/constants/custom-styles-select';
 import { twMerge } from 'tailwind-merge';
@@ -26,17 +25,9 @@ export default function Search({ options = [], optionDisabled, value = '', place
   const [search, setSearch] = useState(value);
   const [category, setCategory] = useState<string | undefined>(valueCategory);
 
-  // Debounce callback
-  const debounced = useDebouncedCallback((value) => {
-    onChange({ search: value, category });
-  }, 1000);
-
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
     const { value } = e.target;
     setSearch(value);
-
-    if (search.trim().length > 0) debounced(value);
   };
 
   const handleCategory = (data: unknown) => {
@@ -47,9 +38,7 @@ export default function Search({ options = [], optionDisabled, value = '', place
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (search.trim().length > 0) {
-      onChange({ search, category });
-    }
+    onChange({ search, category });
   };
 
   return (
